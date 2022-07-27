@@ -23,19 +23,6 @@ struct Worker:public Human
 		cout << name << " Стоимость: " << cost<<" Переносимый груз: "<<cargo<<endl;
 	}
 };
-//struct Sluggard :public IfactoryWorker
-//{
-//	Sluggard()
-//	{
-//		name = "Лентяй";
-//		cargo = 2;
-//		cost = 50;
-//	}
-//	void print() override
-//	{
-//		cout << name << " Стоимость: " << cost<<" Переносимый груз: " << cargo << endl;
-//	}
-//};
 
 struct Building
 {
@@ -53,23 +40,60 @@ struct Barracks:public Building
 };
 
 
+struct Resource
+{
+	string nameRes;
+	int volume;
+	virtual int Volume() = 0;
+};
+
+struct Gold:public Resource
+{
+	Gold()
+	{
+		nameRes = "Золото";
+		volume = 10000;
+	}
+
+	int Volume() override
+	{
+		return volume;
+	}
+};
+
+struct Coal:public Resource
+{
+	Coal()
+	{
+		nameRes = "Уголь";
+		volume = 5000;
+	}
+
+	int Volume() override
+	{
+		return volume;
+	}
+};
+
+
+
 struct Mine
 {
-	string name;
-	int volume;
-	virtual void print() = 0;
+	string nameMine;
+	int volumeMine;
+	virtual Resource* create() = 0;
 };
 
 struct GoldMine: public Mine
 {
 	GoldMine()
 	{
-		name="Золотая шахта";
-		volume=10000;
+		nameMine="Золотая шахта";
 	}
-	void print() override
+
+	Resource* create() override
 	{
-		cout << "Вы построили " << name << ". Количество золота " << volume << endl;
+		return new Gold();
 	}
 };
 
@@ -77,18 +101,61 @@ struct CoalMine : public Mine
 {
 	CoalMine()
 	{
-		name = "Угольная шахта";
-		volume = 10000;
+		nameMine = "Угольная шахта";
 	}
-	void print() override
+
+	Resource* create() override
 	{
-		cout << "Вы построили " << name << ". Количество угля " << volume << endl;
+		return new Coal;
 	}
 };
+
 
 int main()
 {
 	setlocale(LC_ALL, "ru");
+	char choice;
+	Barracks barracks;
+	GoldMine goldMine;
+	CoalMine coalMine;
+	
+	cout << ">>> Добро пожаловать <<<\n";
+
+	for (int i = 0; i < 3; i++)
+	{
+		cout << "> Что будем делать? <\n"
+			<< "G - потроить золотую шахту\n"
+			<< "C - потроить угольную шахту\n"
+			<< "W - нанять рабочего\n";
+		cin >> choice;
+		choice = tolower(choice);
+		switch (choice)
+		{
+			case 'g':
+				{
+					Resource* res= goldMine.create();
+					cout << "Вы построили " << goldMine.nameMine << ". Количество золота " << res->Volume()<<endl;
+				}
+				break;
+			case 'c':
+				{
+					Resource* res = coalMine.create();
+					cout << "Вы построили " << coalMine.nameMine << ". Количество угля " << res->Volume() << endl;
+				}
+				break;
+			case 'w':
+				{
+					Human* hum =barracks.create();
+					cout << "Нанят: ";
+					hum->print();
+				}
+				break;
+			default:
+				cout << "Неверный ввод\n";
+				break;
+		}
+	}
+
     
 }
 

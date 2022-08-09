@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Barracks.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="Human.cpp" />
     <ClCompile Include="pattern_factory.cpp" />
     <ClCompile Include="Resource.cpp" />
@@ -138,6 +139,7 @@
     <ClInclude Include="Building.h" />
     <ClInclude Include="Coal.h" />
     <ClInclude Include="CoalMine.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="Gold.h" />
     <ClInclude Include="GoldMine.h" />
     <ClInclude Include="Human.h" />

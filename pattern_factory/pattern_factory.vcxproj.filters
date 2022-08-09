@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Файлы заголовков\Mines">
+      <UniqueIdentifier>{9778acfc-fc28-4200-8874-04baec1781cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Resources">
+      <UniqueIdentifier>{f2ff4ac1-ee8e-4252-abad-17cd2dc522fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Buildings">
+      <UniqueIdentifier>{05e847eb-7a48-49e6-9a14-0aac806cb002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Workers">
+      <UniqueIdentifier>{c8e10507-afba-4525-ad76-d404f4a4a774}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pattern_factory.cpp">
@@ -30,36 +42,42 @@
     <ClCompile Include="Resource.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Human.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Worker.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Building.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Barracks.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Gold.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Coal.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Mine.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Mines</Filter>
     </ClInclude>
     <ClInclude Include="GoldMine.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Mines</Filter>
     </ClInclude>
     <ClInclude Include="CoalMine.h">
+      <Filter>Файлы заголовков\Mines</Filter>
+    </ClInclude>
+    <ClInclude Include="Gold.h">
+      <Filter>Файлы заголовков\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Coal.h">
+      <Filter>Файлы заголовков\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Файлы заголовков\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Barracks.h">
+      <Filter>Файлы заголовков\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="Building.h">
+      <Filter>Файлы заголовков\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="Worker.h">
+      <Filter>Файлы заголовков\Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="Human.h">
+      <Filter>Файлы заголовков\Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

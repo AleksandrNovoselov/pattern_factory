@@ -3,6 +3,7 @@
 
 struct Building
 {
-	string name;
+	virtual ~Building() = default;
+	string name{};
 	virtual Human* create() = 0;
 };

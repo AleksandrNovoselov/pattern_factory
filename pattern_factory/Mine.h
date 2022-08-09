@@ -3,7 +3,7 @@
 
 struct Mine
 {
-	string nameMine;
-	int volumeMine;
+	string nameMine{};
+	int volumeMine{};
 	virtual Resource* create() = 0;
 };
